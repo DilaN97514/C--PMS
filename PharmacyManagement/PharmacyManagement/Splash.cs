@@ -26,6 +26,11 @@ namespace PharmacyManagement
             {
                 progressBar.Value = 0;
                 timer1.Stop();
+
+                //Load login form
+                Login myLogin = new Login();
+                this.Hide();
+                myLogin.Show();
             }
         }
 
