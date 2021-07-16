@@ -14,3 +14,5 @@ F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\Pharmac
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\bin\Debug\Bunifu_UI_v1.52.dll
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Splash.resources
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Login.resources
+F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\bin\Debug\Guna.UI2.dll
+F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Medicine.resources
