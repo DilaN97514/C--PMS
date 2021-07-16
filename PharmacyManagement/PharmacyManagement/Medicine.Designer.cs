@@ -28,29 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.gdvMedicine = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.mediName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inputBprice = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.inputMedName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.inputSprice = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.inputQty = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.inputExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.inputCompany = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dgvMedicine = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gdvMedicine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,222 +59,188 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Medicine Stock";
             // 
-            // bunifuMaterialTextbox1
+            // inputBprice
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox1.HintText = "Enter buying price";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Transparent;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(368, 123);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(249, 57);
-            this.bunifuMaterialTextbox1.TabIndex = 0;
-            this.bunifuMaterialTextbox1.Text = "Buying Price";
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.inputBprice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputBprice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputBprice.ForeColor = System.Drawing.Color.Maroon;
+            this.inputBprice.HintForeColor = System.Drawing.Color.Gray;
+            this.inputBprice.HintText = "Enter buying price";
+            this.inputBprice.isPassword = false;
+            this.inputBprice.LineFocusedColor = System.Drawing.Color.Maroon;
+            this.inputBprice.LineIdleColor = System.Drawing.Color.Transparent;
+            this.inputBprice.LineMouseHoverColor = System.Drawing.Color.Maroon;
+            this.inputBprice.LineThickness = 3;
+            this.inputBprice.Location = new System.Drawing.Point(368, 123);
+            this.inputBprice.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputBprice.Name = "inputBprice";
+            this.inputBprice.Size = new System.Drawing.Size(249, 57);
+            this.inputBprice.TabIndex = 0;
+            this.inputBprice.Text = "Buying Price";
+            this.inputBprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox2
+            // inputMedName
             // 
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox2.HintText = "Enter medicine name";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Transparent;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(41, 123);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(249, 57);
-            this.bunifuMaterialTextbox2.TabIndex = 0;
-            this.bunifuMaterialTextbox2.Text = "Medicine Name";
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.inputMedName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputMedName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputMedName.ForeColor = System.Drawing.Color.Maroon;
+            this.inputMedName.HintForeColor = System.Drawing.Color.Gray;
+            this.inputMedName.HintText = "Enter medicine name";
+            this.inputMedName.isPassword = false;
+            this.inputMedName.LineFocusedColor = System.Drawing.Color.Maroon;
+            this.inputMedName.LineIdleColor = System.Drawing.Color.Transparent;
+            this.inputMedName.LineMouseHoverColor = System.Drawing.Color.Maroon;
+            this.inputMedName.LineThickness = 3;
+            this.inputMedName.Location = new System.Drawing.Point(41, 123);
+            this.inputMedName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputMedName.Name = "inputMedName";
+            this.inputMedName.Size = new System.Drawing.Size(249, 57);
+            this.inputMedName.TabIndex = 0;
+            this.inputMedName.Text = "Medicine Name";
+            this.inputMedName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox3
+            // inputSprice
             // 
-            this.bunifuMaterialTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox3.ForeColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox3.HintForeColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox3.HintText = "Enter selling price";
-            this.bunifuMaterialTextbox3.isPassword = false;
-            this.bunifuMaterialTextbox3.LineFocusedColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox3.LineIdleColor = System.Drawing.Color.Transparent;
-            this.bunifuMaterialTextbox3.LineMouseHoverColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox3.LineThickness = 3;
-            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(368, 215);
-            this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
-            this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(249, 57);
-            this.bunifuMaterialTextbox3.TabIndex = 0;
-            this.bunifuMaterialTextbox3.Text = "Selling Price";
-            this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.inputSprice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputSprice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputSprice.ForeColor = System.Drawing.Color.Maroon;
+            this.inputSprice.HintForeColor = System.Drawing.Color.Gray;
+            this.inputSprice.HintText = "Enter selling price";
+            this.inputSprice.isPassword = false;
+            this.inputSprice.LineFocusedColor = System.Drawing.Color.Maroon;
+            this.inputSprice.LineIdleColor = System.Drawing.Color.Transparent;
+            this.inputSprice.LineMouseHoverColor = System.Drawing.Color.Maroon;
+            this.inputSprice.LineThickness = 3;
+            this.inputSprice.Location = new System.Drawing.Point(368, 215);
+            this.inputSprice.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputSprice.Name = "inputSprice";
+            this.inputSprice.Size = new System.Drawing.Size(249, 57);
+            this.inputSprice.TabIndex = 0;
+            this.inputSprice.Text = "Selling Price";
+            this.inputSprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox4
+            // inputQty
             // 
-            this.bunifuMaterialTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox4.ForeColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox4.HintForeColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox4.HintText = "Enter quantity";
-            this.bunifuMaterialTextbox4.isPassword = false;
-            this.bunifuMaterialTextbox4.LineFocusedColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox4.LineIdleColor = System.Drawing.Color.Transparent;
-            this.bunifuMaterialTextbox4.LineMouseHoverColor = System.Drawing.Color.Maroon;
-            this.bunifuMaterialTextbox4.LineThickness = 3;
-            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(368, 322);
-            this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
-            this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(249, 57);
-            this.bunifuMaterialTextbox4.TabIndex = 0;
-            this.bunifuMaterialTextbox4.Text = "Quantity";
-            this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.inputQty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputQty.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputQty.ForeColor = System.Drawing.Color.Maroon;
+            this.inputQty.HintForeColor = System.Drawing.Color.Gray;
+            this.inputQty.HintText = "Enter quantity";
+            this.inputQty.isPassword = false;
+            this.inputQty.LineFocusedColor = System.Drawing.Color.Maroon;
+            this.inputQty.LineIdleColor = System.Drawing.Color.Transparent;
+            this.inputQty.LineMouseHoverColor = System.Drawing.Color.Maroon;
+            this.inputQty.LineThickness = 3;
+            this.inputQty.Location = new System.Drawing.Point(368, 322);
+            this.inputQty.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputQty.Name = "inputQty";
+            this.inputQty.Size = new System.Drawing.Size(249, 57);
+            this.inputQty.TabIndex = 0;
+            this.inputQty.Text = "Quantity";
+            this.inputQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // guna2DateTimePicker1
+            // inputExpDate
             // 
-            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.Maroon;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(41, 230);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(249, 51);
-            this.guna2DateTimePicker1.TabIndex = 2;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2021, 7, 16, 13, 9, 5, 8);
+            this.inputExpDate.CheckedState.Parent = this.inputExpDate;
+            this.inputExpDate.FillColor = System.Drawing.Color.Maroon;
+            this.inputExpDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputExpDate.ForeColor = System.Drawing.Color.White;
+            this.inputExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.inputExpDate.HoverState.Parent = this.inputExpDate;
+            this.inputExpDate.Location = new System.Drawing.Point(41, 230);
+            this.inputExpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.inputExpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.inputExpDate.Name = "inputExpDate";
+            this.inputExpDate.ShadowDecoration.Parent = this.inputExpDate;
+            this.inputExpDate.Size = new System.Drawing.Size(249, 51);
+            this.inputExpDate.TabIndex = 2;
+            this.inputExpDate.Value = new System.DateTime(2021, 7, 16, 13, 9, 5, 8);
             // 
-            // guna2ComboBox1
+            // inputCompany
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(41, 345);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(249, 36);
-            this.guna2ComboBox1.TabIndex = 3;
+            this.inputCompany.BackColor = System.Drawing.Color.Transparent;
+            this.inputCompany.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.inputCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputCompany.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputCompany.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.inputCompany.FocusedState.Parent = this.inputCompany;
+            this.inputCompany.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.inputCompany.ForeColor = System.Drawing.Color.Maroon;
+            this.inputCompany.HoverState.Parent = this.inputCompany;
+            this.inputCompany.ItemHeight = 30;
+            this.inputCompany.Items.AddRange(new object[] {
+            "Select Company",
+            "INDIAMED",
+            "KARANTAKAMED",
+            "SPC SRILANKA",
+            "BLRMED",
+            "MYCOMP",
+            "MYMED LTD"});
+            this.inputCompany.ItemsAppearance.Parent = this.inputCompany;
+            this.inputCompany.Location = new System.Drawing.Point(41, 345);
+            this.inputCompany.Name = "inputCompany";
+            this.inputCompany.ShadowDecoration.Parent = this.inputCompany;
+            this.inputCompany.Size = new System.Drawing.Size(249, 36);
+            this.inputCompany.StartIndex = 0;
+            this.inputCompany.TabIndex = 3;
             // 
-            // gdvMedicine
+            // dgvMedicine
             // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.gdvMedicine.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
-            this.gdvMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gdvMedicine.BackgroundColor = System.Drawing.Color.White;
-            this.gdvMedicine.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gdvMedicine.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gdvMedicine.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdvMedicine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            this.gdvMedicine.ColumnHeadersHeight = 40;
-            this.gdvMedicine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mediName,
-            this.Bprice,
-            this.Sprice,
-            this.Qty,
-            this.ExpDate,
-            this.Company});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvMedicine.DefaultCellStyle = dataGridViewCellStyle24;
-            this.gdvMedicine.EnableHeadersVisualStyles = false;
-            this.gdvMedicine.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvMedicine.Location = new System.Drawing.Point(655, 29);
-            this.gdvMedicine.Name = "gdvMedicine";
-            this.gdvMedicine.RowHeadersVisible = false;
-            this.gdvMedicine.RowHeadersWidth = 51;
-            this.gdvMedicine.RowTemplate.Height = 24;
-            this.gdvMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gdvMedicine.Size = new System.Drawing.Size(889, 731);
-            this.gdvMedicine.TabIndex = 4;
-            this.gdvMedicine.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.gdvMedicine.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.gdvMedicine.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.gdvMedicine.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.gdvMedicine.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gdvMedicine.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.gdvMedicine.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvMedicine.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gdvMedicine.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gdvMedicine.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.gdvMedicine.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.gdvMedicine.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gdvMedicine.ThemeStyle.HeaderStyle.Height = 40;
-            this.gdvMedicine.ThemeStyle.ReadOnly = false;
-            this.gdvMedicine.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.gdvMedicine.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gdvMedicine.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.gdvMedicine.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.gdvMedicine.ThemeStyle.RowsStyle.Height = 24;
-            this.gdvMedicine.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gdvMedicine.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // mediName
-            // 
-            this.mediName.HeaderText = "Medicine";
-            this.mediName.MinimumWidth = 6;
-            this.mediName.Name = "mediName";
-            // 
-            // Bprice
-            // 
-            this.Bprice.HeaderText = "Bprice";
-            this.Bprice.MinimumWidth = 6;
-            this.Bprice.Name = "Bprice";
-            // 
-            // Sprice
-            // 
-            this.Sprice.HeaderText = "Sprice";
-            this.Sprice.MinimumWidth = 6;
-            this.Sprice.Name = "Sprice";
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Qty";
-            this.Qty.MinimumWidth = 6;
-            this.Qty.Name = "Qty";
-            // 
-            // ExpDate
-            // 
-            this.ExpDate.HeaderText = "Exp";
-            this.ExpDate.MinimumWidth = 6;
-            this.ExpDate.Name = "ExpDate";
-            // 
-            // Company
-            // 
-            this.Company.HeaderText = "Company";
-            this.Company.MinimumWidth = 6;
-            this.Company.Name = "Company";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvMedicine.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMedicine.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMedicine.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMedicine.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvMedicine.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMedicine.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMedicine.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMedicine.EnableHeadersVisualStyles = false;
+            this.dgvMedicine.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMedicine.Location = new System.Drawing.Point(655, 29);
+            this.dgvMedicine.Name = "dgvMedicine";
+            this.dgvMedicine.RowHeadersVisible = false;
+            this.dgvMedicine.RowHeadersWidth = 51;
+            this.dgvMedicine.RowTemplate.Height = 24;
+            this.dgvMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMedicine.Size = new System.Drawing.Size(889, 731);
+            this.dgvMedicine.TabIndex = 4;
+            this.dgvMedicine.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMedicine.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvMedicine.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvMedicine.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvMedicine.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvMedicine.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMedicine.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMedicine.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvMedicine.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMedicine.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvMedicine.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvMedicine.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvMedicine.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvMedicine.ThemeStyle.ReadOnly = false;
+            this.dgvMedicine.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMedicine.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvMedicine.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvMedicine.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvMedicine.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvMedicine.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMedicine.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // btnLogin
             // 
@@ -300,91 +260,92 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.FillColor = System.Drawing.Color.DarkRed;
             this.btnLogin.HoverState.Parent = this.btnLogin;
-            this.btnLogin.Location = new System.Drawing.Point(82, 494);
+            this.btnLogin.Location = new System.Drawing.Point(85, 494);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.PressedColor = System.Drawing.Color.DarkRed;
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
             this.btnLogin.Size = new System.Drawing.Size(174, 55);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "ADD";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // guna2Button1
+            // btnUpdate
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Maroon;
-            this.guna2Button1.FocusedColor = System.Drawing.Color.Maroon;
-            this.guna2Button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.DarkRed;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(368, 494);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.PressedColor = System.Drawing.Color.DarkRed;
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(174, 55);
-            this.guna2Button1.TabIndex = 6;
-            this.guna2Button1.Text = "UPDATE";
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BorderRadius = 15;
+            this.btnUpdate.CheckedState.Parent = this.btnUpdate;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.DisabledState.Parent = this.btnUpdate;
+            this.btnUpdate.FillColor = System.Drawing.Color.Maroon;
+            this.btnUpdate.FocusedColor = System.Drawing.Color.Maroon;
+            this.btnUpdate.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.HoverState.FillColor = System.Drawing.Color.DarkRed;
+            this.btnUpdate.HoverState.Parent = this.btnUpdate;
+            this.btnUpdate.Location = new System.Drawing.Point(371, 494);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.PressedColor = System.Drawing.Color.DarkRed;
+            this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
+            this.btnUpdate.Size = new System.Drawing.Size(174, 55);
+            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.Text = "UPDATE";
             // 
-            // guna2Button2
+            // btnDelete
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 15;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.DisabledState.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.Maroon;
-            this.guna2Button2.FocusedColor = System.Drawing.Color.Maroon;
-            this.guna2Button2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.DarkRed;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(82, 579);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.PressedColor = System.Drawing.Color.DarkRed;
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(174, 55);
-            this.guna2Button2.TabIndex = 6;
-            this.guna2Button2.Text = "DELETE";
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BorderRadius = 15;
+            this.btnDelete.CheckedState.Parent = this.btnDelete;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.DisabledState.Parent = this.btnDelete;
+            this.btnDelete.FillColor = System.Drawing.Color.Maroon;
+            this.btnDelete.FocusedColor = System.Drawing.Color.Maroon;
+            this.btnDelete.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.HoverState.FillColor = System.Drawing.Color.DarkRed;
+            this.btnDelete.HoverState.Parent = this.btnDelete;
+            this.btnDelete.Location = new System.Drawing.Point(85, 579);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.PressedColor = System.Drawing.Color.DarkRed;
+            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
+            this.btnDelete.Size = new System.Drawing.Size(174, 55);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "DELETE";
             // 
-            // guna2Button3
+            // btnBack
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderRadius = 15;
-            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
-            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.DisabledState.Parent = this.guna2Button3;
-            this.guna2Button3.FillColor = System.Drawing.Color.Maroon;
-            this.guna2Button3.FocusedColor = System.Drawing.Color.Maroon;
-            this.guna2Button3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.DarkRed;
-            this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(368, 579);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.PressedColor = System.Drawing.Color.DarkRed;
-            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(174, 55);
-            this.guna2Button3.TabIndex = 6;
-            this.guna2Button3.Text = "BACK";
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderRadius = 15;
+            this.btnBack.CheckedState.Parent = this.btnBack;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.CustomImages.Parent = this.btnBack;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.DisabledState.Parent = this.btnBack;
+            this.btnBack.FillColor = System.Drawing.Color.Maroon;
+            this.btnBack.FocusedColor = System.Drawing.Color.Maroon;
+            this.btnBack.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.HoverState.FillColor = System.Drawing.Color.DarkRed;
+            this.btnBack.HoverState.Parent = this.btnBack;
+            this.btnBack.Location = new System.Drawing.Point(371, 579);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.PressedColor = System.Drawing.Color.DarkRed;
+            this.btnBack.ShadowDecoration.Parent = this.btnBack;
+            this.btnBack.Size = new System.Drawing.Size(174, 55);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "BACK";
             // 
             // guna2Button4
             // 
@@ -404,7 +365,7 @@
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.DarkRed;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(225, 673);
+            this.guna2Button4.Location = new System.Drawing.Point(228, 673);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.PressedColor = System.Drawing.Color.DarkRed;
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
@@ -418,24 +379,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1567, 786);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.guna2Button4);
-            this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.gdvMedicine);
-            this.Controls.Add(this.guna2ComboBox1);
-            this.Controls.Add(this.guna2DateTimePicker1);
-            this.Controls.Add(this.bunifuMaterialTextbox2);
-            this.Controls.Add(this.bunifuMaterialTextbox4);
-            this.Controls.Add(this.bunifuMaterialTextbox3);
-            this.Controls.Add(this.bunifuMaterialTextbox1);
+            this.Controls.Add(this.dgvMedicine);
+            this.Controls.Add(this.inputCompany);
+            this.Controls.Add(this.inputExpDate);
+            this.Controls.Add(this.inputMedName);
+            this.Controls.Add(this.inputQty);
+            this.Controls.Add(this.inputSprice);
+            this.Controls.Add(this.inputBprice);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Medicine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Medicine";
-            ((System.ComponentModel.ISupportInitialize)(this.gdvMedicine)).EndInit();
+            this.Load += new System.EventHandler(this.Medicine_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,23 +406,17 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2DataGridView gdvMedicine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mediName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bprice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sprice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExpDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Company;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox inputBprice;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox inputMedName;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox inputSprice;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox inputQty;
+        private Guna.UI2.WinForms.Guna2DateTimePicker inputExpDate;
+        private Guna.UI2.WinForms.Guna2ComboBox inputCompany;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvMedicine;
         private Guna.UI2.WinForms.Guna2Button btnLogin;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnBack;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }
