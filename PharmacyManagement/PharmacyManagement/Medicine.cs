@@ -16,5 +16,10 @@ namespace PharmacyManagement
         {
             InitializeComponent();
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
