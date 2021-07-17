@@ -16,3 +16,4 @@ F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\Pharmac
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Login.resources
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\bin\Debug\Guna.UI2.dll
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Medicine.resources
+F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Employees.resources

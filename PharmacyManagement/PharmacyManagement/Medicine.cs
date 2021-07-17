@@ -21,9 +21,8 @@ namespace PharmacyManagement
 
         public static extern int SendMessage(IntPtr hwnd, int msg, int wParm, int Iparm);
         [DllImportAttribute("user32.dll")]
-        //panel move mouse handler end
-
         public static extern bool ReleaseCapture();
+        //panel move mouse handler end
 
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\Pharmacenter_db.mdf;Integrated Security=True;Connect Timeout=30");
 
