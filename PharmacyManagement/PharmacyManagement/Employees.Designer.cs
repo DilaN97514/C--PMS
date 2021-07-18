@@ -40,7 +40,7 @@
             this.empSalary = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.empGender = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.inputExpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.empBday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.empRole = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dgvEmployee = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -211,22 +211,22 @@
             this.empGender.StartIndex = 0;
             this.empGender.TabIndex = 15;
             // 
-            // inputExpDate
+            // empBday
             // 
-            this.inputExpDate.CheckedState.Parent = this.inputExpDate;
-            this.inputExpDate.FillColor = System.Drawing.Color.Maroon;
-            this.inputExpDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputExpDate.ForeColor = System.Drawing.Color.White;
-            this.inputExpDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.inputExpDate.HoverState.Parent = this.inputExpDate;
-            this.inputExpDate.Location = new System.Drawing.Point(494, 216);
-            this.inputExpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.inputExpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.inputExpDate.Name = "inputExpDate";
-            this.inputExpDate.ShadowDecoration.Parent = this.inputExpDate;
-            this.inputExpDate.Size = new System.Drawing.Size(249, 51);
-            this.inputExpDate.TabIndex = 16;
-            this.inputExpDate.Value = new System.DateTime(2021, 7, 16, 13, 9, 5, 8);
+            this.empBday.CheckedState.Parent = this.empBday;
+            this.empBday.FillColor = System.Drawing.Color.Maroon;
+            this.empBday.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empBday.ForeColor = System.Drawing.Color.White;
+            this.empBday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.empBday.HoverState.Parent = this.empBday;
+            this.empBday.Location = new System.Drawing.Point(494, 216);
+            this.empBday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.empBday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.empBday.Name = "empBday";
+            this.empBday.ShadowDecoration.Parent = this.empBday;
+            this.empBday.Size = new System.Drawing.Size(249, 51);
+            this.empBday.TabIndex = 16;
+            this.empBday.Value = new System.DateTime(2021, 7, 16, 13, 9, 5, 8);
             // 
             // label2
             // 
@@ -316,6 +316,7 @@
             this.dgvEmployee.ThemeStyle.RowsStyle.Height = 24;
             this.dgvEmployee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvEmployee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellContentClick);
             // 
             // btnUpdate
             // 
@@ -342,6 +343,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(174, 55);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // guna2Button4
             // 
@@ -421,6 +423,7 @@
             this.btnDelete.Size = new System.Drawing.Size(174, 55);
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "DELETE";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -447,6 +450,7 @@
             this.btnAdd.Size = new System.Drawing.Size(174, 55);
             this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "ADD";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel1
             // 
@@ -461,6 +465,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1567, 786);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnUpdate);
@@ -471,7 +476,7 @@
             this.Controls.Add(this.dgvEmployee);
             this.Controls.Add(this.empRole);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.inputExpDate);
+            this.Controls.Add(this.empBday);
             this.Controls.Add(this.empGender);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.empSalary);
@@ -485,6 +490,7 @@
             this.Name = "Employees";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employees";
+            this.Load += new System.EventHandler(this.Employees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -502,7 +508,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox empSalary;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox empGender;
-        private Guna.UI2.WinForms.Guna2DateTimePicker inputExpDate;
+        private Guna.UI2.WinForms.Guna2DateTimePicker empBday;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuMaterialTextbox empRole;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEmployee;
