@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblBilling = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medSelect = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblStocks = new System.Windows.Forms.Label();
             this.inputQty = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -90,28 +89,19 @@
             this.medSelect.Size = new System.Drawing.Size(249, 36);
             this.medSelect.StartIndex = 0;
             this.medSelect.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(138, 262);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 25);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Available Stocks :";
+            this.medSelect.SelectionChangeCommitted += new System.EventHandler(this.medSelect_SelectionChangeCommitted);
             // 
             // lblStocks
             // 
             this.lblStocks.AutoSize = true;
             this.lblStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStocks.ForeColor = System.Drawing.Color.Maroon;
-            this.lblStocks.Location = new System.Drawing.Point(312, 262);
+            this.lblStocks.Location = new System.Drawing.Point(138, 259);
             this.lblStocks.Name = "lblStocks";
             this.lblStocks.Size = new System.Drawing.Size(67, 25);
             this.lblStocks.TabIndex = 17;
             this.lblStocks.Text = "00000";
+            this.lblStocks.Visible = false;
             // 
             // inputQty
             // 
@@ -179,21 +169,21 @@
             // 
             // dgvCompany
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvCompany.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.dgvCompany.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvCompany.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompany.BackgroundColor = System.Drawing.Color.White;
             this.dgvCompany.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCompany.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCompany.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvCompany.ColumnHeadersHeight = 40;
             this.dgvCompany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MedID,
@@ -201,14 +191,14 @@
             this.Quantity,
             this.UnitPrice,
             this.TotalPrice});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCompany.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCompany.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvCompany.EnableHeadersVisualStyles = false;
             this.dgvCompany.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCompany.Location = new System.Drawing.Point(563, 51);
@@ -280,7 +270,6 @@
             this.Controls.Add(this.btnBill);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.inputQty);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblStocks);
             this.Controls.Add(this.medSelect);
             this.Controls.Add(this.panel1);
@@ -301,7 +290,6 @@
         private System.Windows.Forms.Label lblBilling;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2ComboBox medSelect;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblStocks;
         private Bunifu.Framework.UI.BunifuMaterialTextbox inputQty;
         private System.Windows.Forms.Button btnClose;

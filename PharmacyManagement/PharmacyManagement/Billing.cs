@@ -48,6 +48,21 @@ namespace PharmacyManagement
                 MessageBox.Show("ComboBox Error!");
             }
         }
+        public void availableStocks()
+        {
+            con.Open();
+            string mySql = "SELECT * FROM Medicine_tbl WHERE MedicineName = '" + medSelect.SelectedValue.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(mySql, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach(DataRow dr in dt.Rows)
+            {
+                lblStocks.Text = "Available Stocks : "+dr["Qty"].ToString();
+                lblStocks.Visible = true;
+            }
+            con.Close();
+        }
 
         public Billing()
         {
@@ -71,6 +86,11 @@ namespace PharmacyManagement
         private void Billing_Load(object sender, EventArgs e)
         {
             setCombobox();
+        }
+
+        private void medSelect_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            availableStocks();
         }
     }
 }
