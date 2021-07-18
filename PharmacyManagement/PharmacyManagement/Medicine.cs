@@ -159,5 +159,10 @@ namespace PharmacyManagement
                 SendMessage(Handle, WM_NCLBUTONDOWN, HT_CAPTION,0);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
