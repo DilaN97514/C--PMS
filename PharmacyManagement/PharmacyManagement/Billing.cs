@@ -48,6 +48,7 @@ namespace PharmacyManagement
                 MessageBox.Show("ComboBox Error!");
             }
         }
+        int x,unitp;
         public void availableStocks()
         {
             con.Open();
@@ -58,6 +59,8 @@ namespace PharmacyManagement
             da.Fill(dt);
             foreach(DataRow dr in dt.Rows)
             {
+                x = Convert.ToInt32(dr["Qty"].ToString());
+                unitp = Convert.ToInt32(dr["Sprice"].ToString());
                 lblStocks.Text = "Available Stocks : "+dr["Qty"].ToString();
                 lblStocks.Visible = true;
             }
@@ -91,6 +94,22 @@ namespace PharmacyManagement
         private void medSelect_SelectionChangeCommitted(object sender, EventArgs e)
         {
             availableStocks();
+        }
+
+        int GrdTotal = 0;
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            int n = 0, total = Convert.ToInt32(inputQty.Text) * unitp;
+            DataGridViewRow newRow = new DataGridViewRow();
+            newRow.CreateCells(dgvBilling);
+            newRow.Cells[0].Value = n + 1;
+            newRow.Cells[1].Value = medSelect.SelectedValue.ToString();
+            newRow.Cells[2].Value = inputQty.Text;
+            newRow.Cells[3].Value = unitp;
+            newRow.Cells[4].Value = unitp * Convert.ToInt32(inputQty.Text);
+            dgvBilling.Rows.Add(newRow);
+            GrdTotal = GrdTotal + total;
+            lblTotalAmount.Text = "Rs " + GrdTotal;
         }
     }
 }

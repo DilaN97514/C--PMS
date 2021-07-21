@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblBilling = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medSelect = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -38,13 +38,14 @@
             this.inputQty = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnBill = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvCompany = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvBilling = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MedName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBilling)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBilling
@@ -166,70 +167,71 @@
             this.btnBill.Size = new System.Drawing.Size(212, 65);
             this.btnBill.TabIndex = 27;
             this.btnBill.Text = "ADD TO BILL";
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
-            // dgvCompany
+            // dgvBilling
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvCompany.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgvCompany.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCompany.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCompany.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCompany.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCompany.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvCompany.ColumnHeadersHeight = 40;
-            this.dgvCompany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvBilling.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBilling.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBilling.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBilling.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBilling.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBilling.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvBilling.ColumnHeadersHeight = 40;
+            this.dgvBilling.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MedID,
             this.MedName,
             this.Quantity,
             this.UnitPrice,
             this.TotalPrice});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCompany.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvCompany.EnableHeadersVisualStyles = false;
-            this.dgvCompany.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCompany.Location = new System.Drawing.Point(563, 51);
-            this.dgvCompany.Name = "dgvCompany";
-            this.dgvCompany.RowHeadersVisible = false;
-            this.dgvCompany.RowHeadersWidth = 51;
-            this.dgvCompany.RowTemplate.Height = 24;
-            this.dgvCompany.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCompany.Size = new System.Drawing.Size(940, 644);
-            this.dgvCompany.TabIndex = 28;
-            this.dgvCompany.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCompany.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvCompany.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvCompany.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvCompany.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvCompany.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCompany.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCompany.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvCompany.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvCompany.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvCompany.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvCompany.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvCompany.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgvCompany.ThemeStyle.ReadOnly = false;
-            this.dgvCompany.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvCompany.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCompany.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvCompany.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvCompany.ThemeStyle.RowsStyle.Height = 24;
-            this.dgvCompany.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCompany.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBilling.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBilling.EnableHeadersVisualStyles = false;
+            this.dgvBilling.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBilling.Location = new System.Drawing.Point(563, 51);
+            this.dgvBilling.Name = "dgvBilling";
+            this.dgvBilling.RowHeadersVisible = false;
+            this.dgvBilling.RowHeadersWidth = 51;
+            this.dgvBilling.RowTemplate.Height = 24;
+            this.dgvBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBilling.Size = new System.Drawing.Size(940, 644);
+            this.dgvBilling.TabIndex = 28;
+            this.dgvBilling.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBilling.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvBilling.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvBilling.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvBilling.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvBilling.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBilling.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBilling.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvBilling.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvBilling.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvBilling.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvBilling.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvBilling.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvBilling.ThemeStyle.ReadOnly = false;
+            this.dgvBilling.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBilling.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBilling.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvBilling.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBilling.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvBilling.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBilling.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // MedID
             // 
@@ -261,12 +263,25 @@
             this.TotalPrice.MinimumWidth = 6;
             this.TotalPrice.Name = "TotalPrice";
             // 
+            // lblTotalAmount
+            // 
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.Maroon;
+            this.lblTotalAmount.Location = new System.Drawing.Point(48, 603);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(237, 40);
+            this.lblTotalAmount.TabIndex = 29;
+            this.lblTotalAmount.Text = "Total Amount";
+            // 
             // Billing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1549, 739);
-            this.Controls.Add(this.dgvCompany);
+            this.Controls.Add(this.lblTotalAmount);
+            this.Controls.Add(this.dgvBilling);
             this.Controls.Add(this.btnBill);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.inputQty);
@@ -279,7 +294,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Billing";
             this.Load += new System.EventHandler(this.Billing_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBilling)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,11 +309,12 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox inputQty;
         private System.Windows.Forms.Button btnClose;
         private Guna.UI2.WinForms.Guna2Button btnBill;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvCompany;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvBilling;
         private System.Windows.Forms.DataGridViewTextBoxColumn MedID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MedName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.Label lblTotalAmount;
     }
 }
