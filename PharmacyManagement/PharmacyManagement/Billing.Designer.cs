@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Billing));
             this.lblBilling = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.medSelect = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblStocks = new System.Windows.Forms.Label();
-            this.inputQty = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnBill = new Guna.UI2.WinForms.Guna2Button();
             this.dgvBilling = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -45,6 +45,11 @@
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.newQtyInput = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.inputQty = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilling)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +95,7 @@
             this.medSelect.Size = new System.Drawing.Size(249, 36);
             this.medSelect.StartIndex = 0;
             this.medSelect.TabIndex = 5;
+            this.medSelect.SelectedIndexChanged += new System.EventHandler(this.medSelect_SelectedIndexChanged);
             this.medSelect.SelectionChangeCommitted += new System.EventHandler(this.medSelect_SelectionChangeCommitted);
             // 
             // lblStocks
@@ -97,32 +103,12 @@
             this.lblStocks.AutoSize = true;
             this.lblStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStocks.ForeColor = System.Drawing.Color.Maroon;
-            this.lblStocks.Location = new System.Drawing.Point(138, 259);
+            this.lblStocks.Location = new System.Drawing.Point(138, 247);
             this.lblStocks.Name = "lblStocks";
             this.lblStocks.Size = new System.Drawing.Size(67, 25);
             this.lblStocks.TabIndex = 17;
             this.lblStocks.Text = "00000";
             this.lblStocks.Visible = false;
-            // 
-            // inputQty
-            // 
-            this.inputQty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.inputQty.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputQty.ForeColor = System.Drawing.Color.Maroon;
-            this.inputQty.HintForeColor = System.Drawing.Color.Gray;
-            this.inputQty.HintText = "Enter medicine name";
-            this.inputQty.isPassword = false;
-            this.inputQty.LineFocusedColor = System.Drawing.Color.Maroon;
-            this.inputQty.LineIdleColor = System.Drawing.Color.Transparent;
-            this.inputQty.LineMouseHoverColor = System.Drawing.Color.Maroon;
-            this.inputQty.LineThickness = 3;
-            this.inputQty.Location = new System.Drawing.Point(143, 342);
-            this.inputQty.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.inputQty.Name = "inputQty";
-            this.inputQty.Size = new System.Drawing.Size(249, 57);
-            this.inputQty.TabIndex = 19;
-            this.inputQty.Text = "Quantity";
-            this.inputQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btnClose
             // 
@@ -160,7 +146,7 @@
             this.btnBill.ForeColor = System.Drawing.Color.White;
             this.btnBill.HoverState.FillColor = System.Drawing.Color.DarkRed;
             this.btnBill.HoverState.Parent = this.btnBill;
-            this.btnBill.Location = new System.Drawing.Point(161, 486);
+            this.btnBill.Location = new System.Drawing.Point(161, 502);
             this.btnBill.Name = "btnBill";
             this.btnBill.PressedColor = System.Drawing.Color.DarkRed;
             this.btnBill.ShadowDecoration.Parent = this.btnBill;
@@ -171,21 +157,21 @@
             // 
             // dgvBilling
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvBilling.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvBilling.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvBilling.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBilling.BackgroundColor = System.Drawing.Color.White;
             this.dgvBilling.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBilling.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBilling.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Maroon;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvBilling.ColumnHeadersHeight = 40;
             this.dgvBilling.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MedID,
@@ -193,14 +179,14 @@
             this.Quantity,
             this.UnitPrice,
             this.TotalPrice});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBilling.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBilling.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvBilling.EnableHeadersVisualStyles = false;
             this.dgvBilling.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBilling.Location = new System.Drawing.Point(563, 51);
@@ -209,7 +195,7 @@
             this.dgvBilling.RowHeadersWidth = 51;
             this.dgvBilling.RowTemplate.Height = 24;
             this.dgvBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBilling.Size = new System.Drawing.Size(940, 644);
+            this.dgvBilling.Size = new System.Drawing.Size(940, 578);
             this.dgvBilling.TabIndex = 28;
             this.dgvBilling.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBilling.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -269,17 +255,101 @@
             this.lblTotalAmount.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalAmount.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.lblTotalAmount.Location = new System.Drawing.Point(48, 603);
+            this.lblTotalAmount.Location = new System.Drawing.Point(48, 620);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(237, 40);
             this.lblTotalAmount.TabIndex = 29;
             this.lblTotalAmount.Text = "Total Amount";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BorderRadius = 15;
+            this.btnPrint.CheckedState.Parent = this.btnPrint;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.CustomImages.Parent = this.btnPrint;
+            this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrint.DisabledState.Parent = this.btnPrint;
+            this.btnPrint.FillColor = System.Drawing.Color.Maroon;
+            this.btnPrint.FocusedColor = System.Drawing.Color.Maroon;
+            this.btnPrint.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.HoverState.FillColor = System.Drawing.Color.DarkRed;
+            this.btnPrint.HoverState.Parent = this.btnPrint;
+            this.btnPrint.Location = new System.Drawing.Point(924, 646);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.PressedColor = System.Drawing.Color.DarkRed;
+            this.btnPrint.ShadowDecoration.Parent = this.btnPrint;
+            this.btnPrint.Size = new System.Drawing.Size(212, 65);
+            this.btnPrint.TabIndex = 30;
+            this.btnPrint.Text = "PRINT";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // newQtyInput
+            // 
+            this.newQtyInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.newQtyInput.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newQtyInput.ForeColor = System.Drawing.Color.Maroon;
+            this.newQtyInput.HintForeColor = System.Drawing.Color.Gray;
+            this.newQtyInput.HintText = "";
+            this.newQtyInput.isPassword = false;
+            this.newQtyInput.LineFocusedColor = System.Drawing.Color.Maroon;
+            this.newQtyInput.LineIdleColor = System.Drawing.Color.Transparent;
+            this.newQtyInput.LineMouseHoverColor = System.Drawing.Color.Maroon;
+            this.newQtyInput.LineThickness = 3;
+            this.newQtyInput.Location = new System.Drawing.Point(143, 320);
+            this.newQtyInput.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.newQtyInput.Name = "newQtyInput";
+            this.newQtyInput.Size = new System.Drawing.Size(249, 57);
+            this.newQtyInput.TabIndex = 31;
+            this.newQtyInput.Text = "Quantity";
+            this.newQtyInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // inputQty
+            // 
+            this.inputQty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inputQty.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputQty.ForeColor = System.Drawing.Color.Maroon;
+            this.inputQty.HintForeColor = System.Drawing.Color.Gray;
+            this.inputQty.HintText = "Enter medicine name";
+            this.inputQty.isPassword = false;
+            this.inputQty.LineFocusedColor = System.Drawing.Color.Maroon;
+            this.inputQty.LineIdleColor = System.Drawing.Color.Transparent;
+            this.inputQty.LineMouseHoverColor = System.Drawing.Color.Maroon;
+            this.inputQty.LineThickness = 3;
+            this.inputQty.Location = new System.Drawing.Point(143, 409);
+            this.inputQty.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.inputQty.Name = "inputQty";
+            this.inputQty.Size = new System.Drawing.Size(249, 57);
+            this.inputQty.TabIndex = 19;
+            this.inputQty.Text = "Re enter quantity";
+            this.inputQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // Billing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1549, 739);
+            this.Controls.Add(this.newQtyInput);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.dgvBilling);
             this.Controls.Add(this.btnBill);
@@ -306,7 +376,6 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2ComboBox medSelect;
         private System.Windows.Forms.Label lblStocks;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox inputQty;
         private System.Windows.Forms.Button btnClose;
         private Guna.UI2.WinForms.Guna2Button btnBill;
         private Guna.UI2.WinForms.Guna2DataGridView dgvBilling;
@@ -316,5 +385,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.Label lblTotalAmount;
+        private Guna.UI2.WinForms.Guna2Button btnPrint;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox newQtyInput;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox inputQty;
     }
 }

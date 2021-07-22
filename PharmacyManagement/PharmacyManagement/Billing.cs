@@ -48,6 +48,7 @@ namespace PharmacyManagement
                 MessageBox.Show("ComboBox Error!");
             }
         }
+        
         int x,unitp;
         public void availableStocks()
         {
@@ -64,6 +65,16 @@ namespace PharmacyManagement
                 lblStocks.Text = "Available Stocks : "+dr["Qty"].ToString();
                 lblStocks.Visible = true;
             }
+            con.Close();
+        }
+        public void updateMedicine()
+        {
+            con.Open();
+            int newQty = x - Convert.ToInt32(inputQty.Text);
+            String update = "UPDATE Medicine_tbl SET Qty = '" + newQty + "' WHERE MedicineName = '" + medSelect.SelectedValue.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(update, con);
+            cmd.ExecuteNonQuery();
+            //MessageBox.Show("Medicine update successfully");
             con.Close();
         }
 
@@ -96,20 +107,66 @@ namespace PharmacyManagement
             availableStocks();
         }
 
+        Bitmap bitmap;
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Panel panel = new Panel();
+            this.Controls.Add(panel);
+            Graphics graphics = panel.CreateGraphics();
+            Size size = this.ClientSize;
+            bitmap = new Bitmap(size.Width, size.Height, graphics);
+            graphics = Graphics.FromImage(bitmap);
+            Point point = PointToScreen(panel.Location);
+            graphics.CopyFromScreen(point.X, point.Y, 0, 0, size);
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+        }
+
         int GrdTotal = 0;
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bitmap, 0, 0);
+        }
+
         private void btnBill_Click(object sender, EventArgs e)
         {
-            int n = 0, total = Convert.ToInt32(inputQty.Text) * unitp;
-            DataGridViewRow newRow = new DataGridViewRow();
-            newRow.CreateCells(dgvBilling);
-            newRow.Cells[0].Value = n + 1;
-            newRow.Cells[1].Value = medSelect.SelectedValue.ToString();
-            newRow.Cells[2].Value = inputQty.Text;
-            newRow.Cells[3].Value = unitp;
-            newRow.Cells[4].Value = unitp * Convert.ToInt32(inputQty.Text);
-            dgvBilling.Rows.Add(newRow);
-            GrdTotal = GrdTotal + total;
-            lblTotalAmount.Text = "Rs " + GrdTotal;
+            if(newQtyInput.Text == inputQty.Text)
+            {
+                int n = 0;
+                if (newQtyInput.Text == "" || Convert.ToInt32(newQtyInput.Text) > x)
+                {
+                    MessageBox.Show("No enough stocks. Please check available stocks");
+                }
+                else
+                {
+                    int total = Convert.ToInt32(newQtyInput.Text) * unitp;
+                    DataGridViewRow newRow = new DataGridViewRow();
+                    newRow.CreateCells(dgvBilling);
+                    newRow.Cells[0].Value = n + 1;
+                    newRow.Cells[1].Value = medSelect.SelectedValue.ToString();
+                    newRow.Cells[2].Value = newQtyInput.Text;
+                    newRow.Cells[3].Value = unitp;
+                    newRow.Cells[4].Value = unitp * Convert.ToInt32(newQtyInput.Text);
+                    dgvBilling.Rows.Add(newRow);
+                    GrdTotal = GrdTotal + total;
+                    lblTotalAmount.Text = "Rs " + GrdTotal;
+
+                    newQtyInput.Text = "Quantity";
+                    inputQty.Text = "Re enter quantity";
+                    updateMedicine();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Quantity and re enter quantity must be same.");
+            }
+            
+        }
+
+        private void medSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //code
         }
     }
 }
