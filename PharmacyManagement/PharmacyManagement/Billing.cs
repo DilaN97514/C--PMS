@@ -164,6 +164,18 @@ namespace PharmacyManagement
             
         }
 
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            Home hm = new Home();
+            hm.Show();
+            this.Hide();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void medSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
             //code

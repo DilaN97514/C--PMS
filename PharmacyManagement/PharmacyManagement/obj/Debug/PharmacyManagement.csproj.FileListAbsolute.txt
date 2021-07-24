@@ -19,3 +19,4 @@ F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\Pharmac
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Employees.resources
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Company.resources
 F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Billing.resources
+F:\C# Programming\C--PMS\PharmacyManagement\PharmacyManagement\obj\Debug\PharmacyManagement.Home.resources

@@ -123,6 +123,7 @@
             this.btnLogin.Size = new System.Drawing.Size(252, 67);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "LOGIN";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnClose
             // 

@@ -167,5 +167,12 @@ namespace PharmacyManagement
         {
             Application.Exit();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Home hm = new Home();
+            hm.Show();
+            this.Hide();
+        }
     }
 }
